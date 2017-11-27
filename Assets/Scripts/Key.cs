@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour {
-
-	void Update ()
+public class Key : MonoBehaviour
+{
+    void Update()
     {
         transform.Rotate(0, 100 * Time.deltaTime, 0);
     }
@@ -14,6 +14,8 @@ public class Key : MonoBehaviour {
         UIManager.instance.isShowText = true;
 
         GameManager.instance.keyNum -= 1;
-        gameObject.SetActive(false);
+        SoundManager.instance.PlayPickUpSound();
+        Destroy(gameObject);
     }
+
 }
