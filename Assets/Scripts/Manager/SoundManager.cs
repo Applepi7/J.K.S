@@ -13,6 +13,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private AudioSource endingSound;
 
+    [SerializeField]
+    private AudioSource enemyAttackSound;
+
     // Use this for initialization
     void Awake()
     {
@@ -27,6 +30,11 @@ public class SoundManager : MonoBehaviour
     public void PlayEndingSound()
     {
         endingSound.Play();
+    }
+
+    public void PlayEnemyAttackSound()
+    {
+        enemyAttackSound.Play();
     }
 
 }

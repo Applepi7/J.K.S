@@ -10,15 +10,22 @@ public class UIManager : MonoBehaviour {
 
     public bool isShowText;
     public bool isClear;
+    public bool isDead;
 
     [SerializeField]
     private Text keyText;
+
+    [SerializeField]
+    private Text deathText;
 
     [SerializeField]
     private Image light;
 
     [SerializeField]
     private Image clearImg;
+
+    [SerializeField]
+    private Image deathImg;
 
     private float alpha;
     private float imgAlpha;
@@ -34,6 +41,7 @@ public class UIManager : MonoBehaviour {
     void Update()
     {
         ShowLeftKeys();
+        ShowDeath();
         ShowEnding();
     }
 
@@ -57,6 +65,19 @@ public class UIManager : MonoBehaviour {
 
             keyText.color = new Color(255, 255, 255, alpha);
 
+        }
+    }
+
+    public void ShowDeath()
+    {
+        if(isDead)
+        {
+            alpha += changeSpeed * Time.deltaTime;
+            deathImg.color = new Color(255, 255, 255, alpha);
+            deathText.color = new Color(255, 0, 0, alpha);
+            isShowText = false;
+            if(Input.anyKeyDown)
+                SceneManager.LoadScene("MenuScene");
         }
     }
 
