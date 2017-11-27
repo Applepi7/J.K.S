@@ -23,7 +23,6 @@ public class UIManager : MonoBehaviour {
     void Update()
     {
         ShowLeftKeys();
-        print(alpha);
     }
 
     void ShowLeftKeys()
