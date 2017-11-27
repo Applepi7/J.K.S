@@ -11,6 +11,17 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         GameManager.instance = this;
-        keyNum = 2;
+        keyNum = 0;
 	}
+
+    public void Cheat()
+    {
+        if(Input.GetKey(KeyCode.K))
+        {
+            keyNum += 1;
+            if (keyNum + 1 >= 7) keyNum = 7;
+
+            UIManager.instance.isShowText = true;
+        }
+    }
 }

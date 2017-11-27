@@ -13,7 +13,7 @@ public class Key : MonoBehaviour
     {
         UIManager.instance.isShowText = true;
 
-        GameManager.instance.keyNum -= 1;
+        GameManager.instance.keyNum += 1;
         SoundManager.instance.PlayPickUpSound();
         Destroy(gameObject);
     }
